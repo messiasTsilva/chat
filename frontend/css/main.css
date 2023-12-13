@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding : 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  text-decoration: none;
+}
+
+:root {
+  font-size: 10px;
+}
+
+body {
+  background: url("../images/spit-in-my-face.jpg");
+  color: #FBE4FA;
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #000;
+  opacity: 0.7;
+}
+
+.container {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.login {
+  width: 100%;
+  max-width: 58rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(0.7rem);
+  box-shadow: 0 0.5rem 2.5rem rgba(17, 17, 17, 0.25);
+  border-bottom: 0.1rem solid rgba(83, 83, 83, 0.5);
+  border-right: 0.1rem solid rgba(83, 83, 83, 0.5);
+  padding-block: 6rem;
+  padding-inline: 6rem;
+  display: block;
+}
+
+.login > h2 {
+  width: fit-content;
+  font-weight: 700;
+  font-size: 4.2rem;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+  letter-spacing: 0.7rem;
+  position: relative;
+  color: #333;
+  margin-inline: auto;
+}
+
+.login > h2::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #FBE4FA;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.25rem solid #FBE4FA;
+  animation: animarElemento 3s linear infinite;
+  filter: drop-shadow(0 0 1rem #FBE4FA) drop-shadow(0 0 1.5rem rgb(251, 228, 250, 0.2));
+}
+
+@keyframes animarElemento {
+  0%, 10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 95%;
+  }
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.user__icon,
+.password__icon,
+.password__hide__icon,
+.password__view__icon {
+  width: fit-content;
+  position: absolute;
+  top: 1.85rem;
+  left: 3rem;
+}
+
+.password__icon {
+  top: 11rem;
+  left: 2.7rem;
+}
+
+.password__hide__icon,
+.password__view__icon {
+  top: 11rem;
+  left: 40.5rem;
+}
+
+.user__icon svg,
+.password__icon svg,
+.password__hide__icon svg,
+.password__view__icon svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.login__input {
+  box-sizing: border-box;
+  padding: 2rem 6.5rem 2rem 6.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(#1a1a1a, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #1a1a1a);
+  color: #FBE4FA;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+.password__input {
+  box-sizing: border-box;
+  padding: 2.7rem 6.5rem 2rem 6.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  background: linear-gradient(#1a1a1a, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #1a1a1a);
+  color: #FBE4FA;
+  outline: none;
+  border-radius: 0.5rem;
+}
+
+.login__input,
+.password__input {
+  max-height: 6.1rem;
+}
+
+.login__input:focus,
+.password__input:focus {
+  outline: 0.2rem solid #FBE4FA;
+}
+
+.password__recovery {
+  color: #B0FF80;
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.password__recovery:hover {
+  filter: drop-shadow(0 0 1rem #B0FF80) drop-shadow(0 0 1.5rem rgb(176, 255, 128, 0.2));
+}
+
+.login__signup {
+  color: #A4FAFF;
+  cursor: pointer;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.login__signup:hover {
+  filter: drop-shadow(0 0 1rem #A4FAFF) drop-shadow(0 0 1.5rem rgb(164, 250, 255, 0.2))
+}
+
+.login__signup__recover {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.login__button {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  outline: none;
+  border: 0.1rem solid #FFB1FA;
+  background: linear-gradient(#1a1a1a, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #1a1a1a);
+  color: #FFB1FA;
+  cursor: pointer;
+}
+
+.login__button:hover {
+  filter: drop-shadow(0 0 1rem #FFB1FA) drop-shadow(0 0 1.5rem rgb(255, 177, 250, 0.2))
+}
+
+.chat__button {
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  left: 80%;
+  top: 28%;
+} 
+
+.chat__send, 
+.chat__send path {
+  stroke: #f2f2f2;
+  width: 65%;
+  height: 65%;
+}
+
+.chat {
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat__messages {
+  flex-grow: 1;
+  padding: 3rem 33rem 9rem 33rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chat__form {
+  background-color: none;
+  padding: 1.5rem 30rem;
+  display: flex;
+  align-items: center; 
+  gap: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.chat__input {
+  border: 0.1rem solid #FBE4FA;
+  padding: 1.5rem 10.2rem 1.5rem 3.6rem;
+  border-radius: 0.8rem;
+  flex-grow: 1;
+  background: linear-gradient(#1a1a1a, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #1a1a1a);
+  outline: none;
+  color: #f2f2f2;
+  font-size: 1.6rem;
+}
+
+.chat__messages > div {
+  padding: 1rem;
+  min-width: 25rem;
+  max-width: 35rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 2.2rem;
+}
+
+.message--self {
+  background: linear-gradient(#1a1a1a, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #1a1a1a);
+  color: #f2f2f2;
+  border-radius: 1rem 1rem 0rem 1rem;
+  align-self: flex-end;
+  border: 0.1rem solid #782F2F;
+  overflow-wrap: break-word;
+}
+
+.message--other {
+  background: linear-gradient(#1a1a1a, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #030303, #1a1a1a);
+  color: #f2f2f2;
+  border-radius: 0rem 1rem 1rem 1rem;
+  align-self: flex-start;
+  border: 0.1rem solid #78482F;
+  overflow-wrap: break-word;
+}
+
+.message--sender {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #78482F;
+}
